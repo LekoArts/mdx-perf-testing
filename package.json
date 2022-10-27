@@ -1,0 +1,40 @@
+{
+  "name": "gabe-fs-mdx",
+  "private": true,
+  "description": "Benchmark site for testing baseline mdx perf with individual files per page",
+  "author": "Peter van der Zee <pvdz@github>",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "bench": "rm -rf generated_articles; gatsby clean; N=${N:-1000} node gen.js; CI=1 node node_modules/.bin/gatsby build",
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
+    "prettier": "2.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby/tree/master/benchmarks/"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "keywords": [
+    "gatsby",
+    "benchmark",
+    "mdx"
+  ],
+  "dependencies": {
+    "@mdx-js/react": "^2.1.5",
+    "faker": "^4.1.0",
+    "gatsby": "next",
+    "gatsby-plugin-mdx": "next",
+    "gatsby-source-filesystem": "next",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
